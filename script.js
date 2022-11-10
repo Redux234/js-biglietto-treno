@@ -10,15 +10,33 @@ console.log(
 )
 
 NumeroChilometri = parseInt(Chilometri);
-PrezzoPienoBiglietto = (Chilometri * 0.21)
+let NumeroChilometriIntero = Math.ceil (NumeroChilometri)
+PrezzoPienoBigliettoDecimale = (NumeroChilometriIntero * 0.21)
+let PrezzoPienoBiglietto = Math.ceil (PrezzoPienoBigliettoDecimale)
 
 console.log(
     `
-    -------------Prezzo Biglietto-------------
+    -------------Prezzo Pieno Biglietto-------------
     Prezzo: ${PrezzoPienoBiglietto}
     ` 
 )
 
+
 NumeroEta = parseInt(Eta)
 
+if (NumeroEta < 18) {
+    PrezzoBiglietto = ((PrezzoPienoBiglietto * 80) / 100)
+    
+} else if (NumeroEta >65) {
+    PrezzoBiglietto = ((PrezzoPienoBiglietto * 60) / 100)
 
+} else {
+    PrezzoBiglietto
+}
+
+console.log(
+    `
+    -------------Prezzo Da Pagare-------------
+    Prezzo: ${PrezzoBiglietto}
+    ` 
+)
