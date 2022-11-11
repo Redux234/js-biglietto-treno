@@ -12,12 +12,13 @@ console.log(
 NumeroChilometri = parseInt(Chilometri);
 let NumeroChilometriIntero = Math.ceil(NumeroChilometri)
 PrezzoPienoBigliettoDecimale = (NumeroChilometriIntero * 0.21)
-let PrezzoPienoBiglietto = Math.ceil(PrezzoPienoBigliettoDecimale)
+let PrezzoPienoBigliettoStringa = PrezzoPienoBigliettoDecimale.toFixed(2)
+let PrezzoPienoBiglietto = parseFloat(PrezzoPienoBigliettoStringa)
 
 console.log(
     `
     -------------Prezzo Pieno Biglietto-------------
-    Prezzo: ${PrezzoPienoBiglietto}
+    Prezzo: ${PrezzoPienoBigliettoStringa}
     `
 )
 
@@ -29,16 +30,15 @@ if (NumeroEta < 18) {
 
 } else if (NumeroEta > 65) {
     PrezzoBiglietto = ((PrezzoPienoBiglietto * 60) / 100)
-
-} else {
-    PrezzoBiglietto = PrezzoBiglietto
 }
+
+let PrezzoBigliettoArrotondato =  PrezzoBiglietto.toFixed(2);
 
 console.log(
     `
     -------------Prezzo Da Pagare-------------
-    Prezzo: ${PrezzoBiglietto}
+    Prezzo: ${PrezzoBigliettoArrotondato}
     `
 )
 
-document.getElementById("Prezzo").innerHTML = PrezzoBiglietto;
+document.getElementById("Prezzo").innerHTML = PrezzoBigliettoArrotondato;
